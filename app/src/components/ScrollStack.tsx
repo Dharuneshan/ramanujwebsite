@@ -1,4 +1,4 @@
-import React, { ReactNode, useLayoutEffect, useRef, useCallback } from 'react';
+import React, { type ReactNode, useLayoutEffect, useRef, useCallback } from 'react';
 import Lenis from 'lenis';
 import './ScrollStack.css';
 
@@ -231,7 +231,6 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
         lerp: 0.08, // Reduced lerp for smoother interpolation
         syncTouch: true,
         syncTouchLerp: 0.05, // Reduced for smoother touch
-        normalizeWheel: true, // Normalize wheel events
         autoRaf: false // Disable auto RAF to control it manually
       });
 
@@ -262,7 +261,6 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
         lerp: 0.08, // Reduced
         syncTouch: true,
         syncTouchLerp: 0.05, // Reduced
-        normalizeWheel: true, // Normalize wheel events
         autoRaf: false // Disable auto RAF
       });
 

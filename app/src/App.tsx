@@ -1,4 +1,3 @@
-import React from 'react';
 import RamanujWebsite from './RamanujWebsite';
 
 function App() {
