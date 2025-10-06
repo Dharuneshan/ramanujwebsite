@@ -524,7 +524,8 @@ const RamanujWebsite = () => {
       const submission = { ...formData };
 
       // Send to backend API
-      const res = await fetch('/api/contacts', {
+      const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8080';
+      const res = await fetch(`${API_BASE_URL}/api/contacts`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(submission)
@@ -614,7 +615,8 @@ const RamanujWebsite = () => {
     if (currentPage !== 'careers') return;
     (async () => {
       try {
-        const res = await fetch('/api/jobs');
+        const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8080';
+        const res = await fetch(`${API_BASE_URL}/api/jobs`);
         if (!res.ok) return;
         const jobs: JobListing[] = await res.json();
         if (Array.isArray(jobs) && jobs.length > 0) {
@@ -1640,7 +1642,8 @@ const RamanujWebsite = () => {
       if (applyResumeFile) {
         form.append('resume', applyResumeFile);
       }
-      const res = await fetch('/api/applications', { method: 'POST', body: form });
+      const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8080';
+      const res = await fetch(`${API_BASE_URL}/api/applications`, { method: 'POST', body: form });
       if (!res.ok) throw new Error('Failed');
       setApplyStatus('success');
       setApplyName('');

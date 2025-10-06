@@ -44,7 +44,10 @@ app.use(morgan('dev'));
 // Body parsing
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors({ origin: true, credentials: true }));
+app.use(cors({ 
+	origin: process.env.FRONTEND_URL || 'https://ramanuj-website.vercel.app',
+	credentials: true 
+}));
 
 // Serve uploaded files
 app.use('/uploads', express.static(uploadsDir));
