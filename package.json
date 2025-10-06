@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "description": "Ramanuj AI Consulting Website",
-  "main": "backend/src/server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "cd backend && npm start",
+    "start": "node index.js",
     "dev": "cd backend && npm run dev",
     "dev:backend": "cd backend && npm run dev",
     "dev:frontend": "cd app && npm run dev",
